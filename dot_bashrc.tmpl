@@ -1,8 +1,8 @@
 {{- $remote := or (env "CODESPACES" | not | not) (env "SSH_CONNECTION" | not | not) (env "KUBERNETES_SERVICE_HOST" | not | not) (env "container" | not | not) (env "REMOTE_CONTAINERS" | not | not) (stat "/.dockerenv" | not | not) -}}
 
 # edit PATH
-if [[ -d $HOME/.local/bin ]]; then
-  export PATH=$HOME/.local/bin:$PATH
+if [[ -d $HOME/.local/bin && ":$PATH:" != *":${HOME}/.local/bin:"* ]]; then
+  export PATH="$HOME/.local/bin:$PATH"
 fi
 
 {{if not .remote -}}

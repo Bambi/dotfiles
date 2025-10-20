@@ -1,0 +1,62 @@
+theme = "gruvbox"
+[editor]
+end-of-line-diagnostics = "hint"
+jump-label-alphabet = "hjklabcdefgimnopqrstuvwxyz"
+line-number = "relative"
+mouse = true
+rulers = [80, 120]
+true-color = true
+[editor.auto-save.after-delay]
+timeout = 1000
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.indent-guides]
+character = "╎"
+render = true
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
+
+[editor.lsp]
+display-inlay-hints = true
+display-messages = true
+
+[editor.soft-wrap]
+enable = true
+
+[editor.statusline]
+center = ["file-modification-indicator", "file-name", "read-only-indicator"]
+left = ["mode", "diagnostics"]
+right = ["selections", "file-type", "file-encoding", "position-percentage", "position"]
+
+[keys.insert]
+A-O = "open_above"
+A-h = "move_char_left"
+A-j = "move_line_down"
+A-k = "move_line_up"
+A-l = "move_char_right"
+A-o = "open_below"
+C-space = "completion"
+
+[keys.normal]
+D = ["extend_to_line_end", "delete_selection"]
+G = "goto_file_end"
+ret = ["move_line_down", "goto_first_nonwhitespace"]
+
+[keys.normal.Z]
+Q = ":q!"
+Z = ":wq"
+
+[keys.normal.space]
+E = [":sh rm -f /tmp/unique-file", ":insert-output yazi %{buffer_name} --chooser-file=/tmp/unique-file", ":insert-output echo \"\\x1b[?1049h\\x1b[?2004h\" > /dev/tty", ":open %sh{cat /tmp/unique-file}", ":redraw"]
+
+[keys.normal.space.space]
+b = ":sh git blame -L %{cursor_line},%{cursor_line} %{buffer_name}"
+
