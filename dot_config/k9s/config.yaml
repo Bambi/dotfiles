@@ -1,6 +1,0 @@
-k9s:
-  ui:
-    headless: true
-    skin: transparent
-  imageScans:
-    enable: false

@@ -1,0 +1,29 @@
+[[mgr.prepend_keymap]]
+desc = "Maximize or restore the preview pane"
+on = "T"
+run = "plugin toggle-pane max-preview"
+
+[[mgr.prepend_keymap]]
+desc = "Chmod on selected files"
+on = ["c", "m"]
+run = "plugin chmod"
+
+[[mgr.prepend_keymap]]
+desc = "Enter the child directory, or open the file"
+on = "l"
+run = "plugin smart-enter"
+
+[[mgr.prepend_keymap]]
+desc = "View file"
+on = "i"
+run = "shell 'bat --paging=always --color=always \"$0\"' --confirm --block"
+
+[[mgr.prepend_keymap]]
+desc = "View file without line numbers"
+on = "I"
+run = "shell 'bat --paging=always --color=always --decorations never \"$0\"' --confirm --block"
+
+[[mgr.prepend_keymap]]
+desc = "Launch a working shell"
+on = "W"
+run = "shell '$SHELL --interactive' --confirm --block"
